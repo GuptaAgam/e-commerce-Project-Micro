@@ -1,0 +1,12 @@
+spring:
+  config:
+    import: optional:configserver:http://localhost:8888
+  application:
+    name: product-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/product
+    username: agam
+    password: agam
+    driver-class-name: org.postgresql.Driver
+server:
+  port: 8050

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Order Confirmation</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
+        .container { background: #ffffff; padding: 20px; border-radius: 6px; max-width: 600px; margin: auto; }
+        h2 { color: #333333; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 10px; border-bottom: 1px solid #ddd; text-align: left; }
+        th { background-color: #f9f9f9; }
+        .total { font-weight: bold; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Thank you for your order, {{customerName}}!</h2>
+    <p>Your order <strong>#{{orderReference}}</strong> has been confirmed.</p>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each products}}
+        <tr>
+            <td>{{this.name}}</td>
+            <td>{{this.quantity}}</td>
+            <td>${{this.price}}</td>
+        </tr>
+        {{/each}}
+        </tbody>
+    </table>
+
+    <p class="total">Total Amount: <strong>${{amount}}</strong></p>
+
+    <p>If you have any questions, feel free to reply to this email.</p>
+    <p>Best regards,<br>The Team</p>
+</div>
+</body>
+</html>
